@@ -6,14 +6,7 @@
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=36BCF7&center=true&vCenter=true&width=600&lines=Professional+README+Generator;Stunning+Documentation+Tool;Modern+Web+Application;Open+Source+Project" alt="Typing SVG" />
 </p>
 
-<p align="center">
-![GitHub stars](https://img.shields.io/github/stars/username/repo?style=social)
-![GitHub forks](https://img.shields.io/github/forks/username/repo?style=social)
-![GitHub issues](https://img.shields.io/github/issues/username/repo)
-![GitHub license](https://img.shields.io/github/license/username/repo)
-![Python](https://img.shields.io/badge/Python-3.11+-blue?style=for-the-badge&logo=python)
-![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit)
-</p>
+
 
 <p align="center">
   <img src="https://user-images.githubusercontent.com/74038190/212284100-561aa473-3905-4a80-b561-0d28506553ee.gif" width="800">
