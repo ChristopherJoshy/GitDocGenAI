@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: github-readme-generator
+    name: GitDocGenAI
     env: python
     region: oregon
     plan: free

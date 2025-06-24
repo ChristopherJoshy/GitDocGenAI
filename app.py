@@ -15,12 +15,12 @@ from utils.validators import validate_github_url, validate_api_key
 
 def main():
     st.set_page_config(
-        page_title="📚 GitHub Repo Documentation Generator",
+        page_title="📚 GitDocGenAI",
         page_icon="📚",
         layout="wide"
     )
     
-    st.title("📚 GitHub Repository Documentation Generator")
+    st.title("📚 GitDocGenAI")
     st.markdown("Generate clean GitHub README documentation for any repository using AI-powered analysis")
     
     # Initialize session state
@@ -50,19 +50,7 @@ def main():
         )
     
     with col3:
-        color_scheme = st.selectbox(
-            "🎨 Color Theme",
-            options=["default", "sunset", "forest", "purple", "cyberpunk", "minimal"],
-            format_func=lambda x: {
-                "default": "🌊 Ocean Blue",
-                "sunset": "🌅 Sunset Orange", 
-                "forest": "🌲 Forest Green",
-                "purple": "💜 Royal Purple",
-                "cyberpunk": "🔮 Cyberpunk Neon",
-                "minimal": "⚫ Minimal Dark"
-            }[x],
-            help="Choose a color theme for your README"
-        )
+        st.empty()
     
     # Validation
     url_valid = validate_github_url(repo_url) if repo_url else False
@@ -101,7 +89,7 @@ def generate_documentation(repo_url: str, api_key: str):
             code_analyzer = CodeAnalyzer()
             doc_generator = GeminiDocGenerator(api_key)
             doc_aggregator = DocAggregator()
-            readme_generator = ReadmeGenerator(color_scheme)
+            readme_generator = ReadmeGenerator("cyberpunk")
             
             # Step 1: Clone repository
             status_text.text("📥 Cloning repository...")
