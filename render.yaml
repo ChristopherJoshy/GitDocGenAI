@@ -6,6 +6,35 @@ services:
     plan: free
     buildCommand: pip install -r requirements.txt
     startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true --server.enableCORS false
+    healthCheckPath: /_stcore/health
     envVars:
       - key: GEMINI_API_KEY
         sync: false
+      - key: PYTHONUNBUFFERED
+        value: "true"
+      - key: STREAMLIT_SERVER_PORT
+        value: "$PORT"
+      - key: STREAMLIT_SERVER_ADDRESS
+        value: "0.0.0.0"
+      - key: STREAMLIT_SERVER_HEADLESS
+        value: "true"
+      - key: STREAMLIT_SERVER_ENABLE_CORS
+        value: "false"
+      - key: STREAMLIT_SERVER_ENABLE_XSRF_PROTECTION
+        value: "false"
+
+    # Auto-deploy on push to main/master branch
+    autoDeploy: true
+    
+    # Handle errors and timeouts better
+    numInstances:
+      default: 1
+      min: 1
+      max: 1
+    
+    # Resource allocation for the free plan
+    scaling:
+      minInstances: 1
+      maxInstances: 1
+      targetMemoryPercent: 80
+      targetCPUPercent: 80 
